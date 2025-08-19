@@ -158,152 +158,6 @@ export const products = [{
     'jacket',
   ]
 }, {
-  id: 'vjhkfykug-ser-434-gtrgd-fd',
-  image: 'Products-images/uni-sex.jfif',
-  name: 'Fashion Elegant Unisex Hoodie Jacket ...',
-  ratings: {
-    star: 3.5,
-    count: 112
-  },
-  price: '15,000',
-
-  keyWords: [
-    'Men',
-    'hoodie',
-    'cloths',
-    'jacket',
-  ]
-}, {
-  id: 'ihrygbv-587yfhg7-hfgn8i',
-  image: 'Products-images/pock.jfif',
-  name: 'Pocket Hooded Jacket ...',
-  ratings: {
-    star: 4,
-    count: 122
-  },
-  price: '18,500',
-
-  keyWords: [
-    'Men',
-    'hoodie',
-    'cloths',
-    'jacket',
-  ]
-}, {
-  id: '486trgsurf76884yfh-truhe85',
-  image: 'Products-images/jack.jpg',
-  name: 'Nevenka Fashion Print Hoodie Unisex Zip up Jacket for Anime Lover  Cosplay-Green - Size S | BIG W',
-  ratings: {
-    star: 5,
-    count: 172
-  },
-  price: '20,700',
-
-  keyWords: [
-    'Men',
-    'fashion',
-    'cloths',
-    'jacket',
-    'zip up'
-  ]
-  
-}, {
-  id: '87uodf978y978r--ptu',
-  image: 'Products-images/trans.jfif',
-  name: 'Fashion Unisex Cotton Clothing...',
-  ratings: {
-    star: 2,
-    count: 50
-  },
-  price: '7,500',
-
-  keyWords: [
-    'Men',
-    'cotton',
-    'cloth',
-    'black',
-  ]
-  
-}, {
-  id: '87uodf9bujygyujgyg7880o0io9y66-ptu',
-  image: 'Products-images/sot.jfif',
-  name: 'Short Pants Stock ...',
-  ratings: {
-    star: 2.5,
-    count: 43
-  },
-  price: '3,400',
-
-  keyWords: [
-    'Men',
-    'cotton',
-    'cloth',
-    'black',
-  ]
-  
-}, {
-  id: 'oi89y665r5670o0-iuu8o-978y978r--ptu',
-  image: 'Products-images/sam.webp',
-  name: 'Samsung 617L Side by Side Refrigerator',
-  ratings: {
-    star: 4.5,
-    count: 355
-  },
-  price: '700,000',
-
-  keyWords: [
-    'Refridgerator',
-    'fridge',
-    'freezer',
-    'dispenser',
-  ]
-}, {
-  id: 'fdhyey-fvr7536eg763-48yiret3',
-  image: 'Products-images/fridge.webp',
-  name: 'Midea 490 Liters Side by Side Refrigerator With Dispenser & Ice Cube maker',
-  ratings: {
-    star: 4.5,
-    count: 345
-  },
-  price: '650,000',
-  keyWords: [
-    'Refridgerator',
-    'fridge',
-    'freezer',
-    'dispenser',
-  ]
- 
-}, {
-  id: 'f6567uuyugyjik98o89p0990upy9t78',
-  image: 'Products-images/wsh.jfif',
-  name: 'Powerful cleaning with gentle care for your clothes',
-  ratings: {
-    star: 3.5,
-    count: 235
-  },
-  price: '150,000',
-  keyWords: [
-    'washing machine',
-    'fridge',
-    'freezer',
-    'dispenser',
-  ]
-}, {
-  id: 'yiuy78iy78iyu76r9uiuij8i',
-  image: 'Products-images/wsh3.jfif',
-  name: 'Compact washer delivers big clean in a small size',
-  ratings: {
-    star: 3,
-    count: 205
-  },
-  price: '100,000',
-  keyWords: [
-    'Refridgerator',
-    'fridge',
-    'freezer',
-    'dispenser',
-  ]
-}, {
   id: 'gf6tr6uti87yo98uo9iu865654edrferxdezw3rq3455',
   image: 'Products-images/iron.jfif',
   name: 'Smooth, fast ironing with precise temperature control.',
@@ -312,21 +166,6 @@ export const products = [{
     count: 315
   },
   price: '50,000',
-  keyWords: [
-    'Refridgerator',
-    'fridge',
-    'freezer',
-    'dispenser',
-  ]
-}, {
-  id: '1d-7056',
-  image: 'Products-images/iron2.jfif',
-  name: 'Modern green-white iron for effortless garment care.',
-  ratings: {
-    star: 3.5,
-    count: 105
-  },
-  price: '42,000',
   keyWords: [
     'Refridgerator',
     'fridge',
@@ -499,21 +338,6 @@ export const products = [{
     'dispenser',
   ]
 }, {
-  id: 'fjhghuidhuvi4h58u5y48y8uxhn78uwhrciubehn',
-  image: 'Products-images/fry5.jfif',
-  name: `"All-Clad" is visible, indicating it's a high-quality cookware product known for durability and performance.`,
-  ratings: {
-    star: 3.5,
-    count: 28
-  },
-  price: '4,500',
-  keyWords: [
-    'Refridgerator',
-    'fridge',
-    'freezer',
-    'dispenser',
-  ]
-}, {
   id: 'fhcuiejuc894yer7843y4igxw4qeq23564566',
   image: 'Products-images/pot.jfif',
   name: 'A set of generic aluminum stockpots',
@@ -537,21 +361,6 @@ export const products = [{
     count: 80
   },
   price: '12,200',
-  keyWords: [
-    'Refridgerator',
-    'fridge',
-    'freezer',
-    'dispenser',
-  ]
-}, {
-  id: 'gghithnierht45uithuty4g5ryhtrgdgf',
-  image: 'Products-images/pot3.jfif',
-  name: 'IKEA Stainless Steel Stockpot with Lid',
-  ratings: {
-    star: 3.5,
-    count: 90
-  },
-  price: '11,000',
   keyWords: [
     'Refridgerator',
     'fridge',
@@ -694,21 +503,6 @@ export const products = [{
     'dispenser',
   ]
 }, {
-  id: 'fvghtyu745yr6756ur56776uyiugyu',
-  image: 'Products-images/oven5.jfif',
-  name: 'Viking Gas Range with Double Ovens',
-  ratings: {
-    star: 4.5,
-    count: 345
-  },
-  price: '650,000',
-  keyWords: [
-    'Refridgerator',
-    'fridge',
-    'freezer',
-    'dispenser',
-  ]
-}, {
   id: 'trkty7h89uib4hiotujvygnuirgtrg',
   image: 'Products-images/gen.jfif',
   name: 'A-iPower IN6000C Portable Generator',
@@ -757,51 +551,6 @@ export const products = [{
   id: 'hyuity78ty768t8763t46746e6576t68er98',
   image: 'Products-images/gen4.jfif',
   name: 'Tiger TG950 Portable Gas Generator - 950W Lightweight Compact Design',
-  ratings: {
-    star: 4.5,
-    count: 345
-  },
-  price: '650,000',
-  keyWords: [
-    'Refridgerator',
-    'fridge',
-    'freezer',
-    'dispenser',
-  ]
-}, {
-  id: 'fgjhtiughdruiu48y578yig78iy548y7u',
-  image: 'Products-images/gen5.jfif',
-  name: 'Industrial Diesel Generator - 60kVA/48kW Silent Enclosed with Digital Control',
-  ratings: {
-    star: 4.5,
-    count: 345
-  },
-  price: '650,000',
-  keyWords: [
-    'Refridgerator',
-    'fridge',
-    'freezer',
-    'dispenser',
-  ]
-}, {
-  id: 'ffhy4v58uyt78y487t4rg768tr876tr468tyibc',
-  image: 'Products-images/gen6.jfif',
-  name: 'Generac Portable Power Station - Lithium Battery Generator with USB/AC Outlets',
-  ratings: {
-    star: 4.5,
-    count: 345
-  },
-  price: '650,000',
-  keyWords: [
-    'Refridgerator',
-    'fridge',
-    'freezer',
-    'dispenser',
-  ]
-}, {
-  id: 'kkkhkutughghiuy89io0--tyh589tu589yhjf',
-  image: 'Products-images/gen7.jfif',
-  name: 'Pulsar G2319N 2300W Portable Inverter Generator - Gray, Ultra Quiet Gas Powered',
   ratings: {
     star: 4.5,
     count: 345
@@ -1117,156 +866,6 @@ export const products = [{
   id: 'zzswaqwerree4322qsedewwewe2qafghjk',
   image: 'Products-images/tele2-samtv.jfif',
   name: 'Samsung 65" QLED 4K Smart TV - Ultra-Slim Black Design with Quantum Dot Technology',
-  ratings: {
-    star: 4.5,
-    count: 345
-  },
-  price: '650,000',
-  keyWords: [
-    'Refridgerator',
-    'fridge',
-    'freezer',
-    'dispenser',
-  ]
-}, {
-  id: 'lllopooiuujjyh778999765578ihyhgyujk-0oiuhgf',
-  image: 'Products-images/tele3.jfif',
-  name: 'LG 55" LED Smart TV - Black with Silver Stand & Full HD Display',
-  ratings: {
-    star: 4.5,
-    count: 345
-  },
-  price: '650,000',
-  keyWords: [
-    'Refridgerator',
-    'fridge',
-    'freezer',
-    'dispenser',
-  ]
-}, {
-  id: 'fhugyugt7h87y45ujjkhuyt',
-  image: 'Products-images/tele4.jfif',
-  name: '75-Inch 4K UHD LED TV - Black Ultra-Large Display with 4K Ultra HD Technology',
-  ratings: {
-    star: 4.5,
-    count: 345
-  },
-  price: '650,000',
-  keyWords: [
-    'Refridgerator',
-    'fridge',
-    'freezer',
-    'dispenser',
-  ]
-}, {
-  id: 'jh8hcbygfr7etr346tr76t766t656656566tw487w9',
-  image: 'Products-images/tele5.jfif',
-  name: '43" LED Smart TV - Black Ultra-Slim Design with Full HD Display',
-  ratings: {
-    star: 4.5,
-    count: 345
-  },
-  price: '650,000',
-  keyWords: [
-    'Refridgerator',
-    'fridge',
-    'freezer',
-    'dispenser',
-  ]
-}, {
-  id: 'mkkjjhjuiguyhyuhubbllkijhkgyuh',
-  image: 'Products-images/lap1.jfif',
-  name: 'Dell 15.6" Laptop - Silver with Full HD Display & Modern Slim Design',
-  ratings: {
-    star: 4.5,
-    count: 345
-  },
-  price: '650,000',
-  keyWords: [
-    'Refridgerator',
-    'fridge',
-    'freezer',
-    'dispenser',
-  ]
-}, {
-  id: 'nnggftyuui76786t76',
-  image: 'Products-images/lap2.jfif',
-  name: 'Pink Ultrabook Laptop - 14-Inch Rose Gold with Lightweight Aluminum Build',
-  ratings: {
-    star: 4.5,
-    count: 345
-  },
-  price: '650,000',
-  keyWords: [
-    'Refridgerator',
-    'fridge',
-    'freezer',
-    'dispenser',
-  ]
-}, {
-  id: 'bbbvffddee344431211345678ijh',
-  image: 'Products-images/images5.png',
-  name: 'Midea 490 Liters Side by Side Refrigerator With Dispenser & Ice Cube maker',
-  ratings: {
-    star: 4.5,
-    count: 345
-  },
-  price: '650,000',
-  keyWords: [
-    'Refridgerator',
-    'fridge',
-    'freezer',
-    'dispenser',
-  ]
-}, {
-  id: 'jyur76y7h8yh786ty78i78y987yi',
-  image: 'Products-images/images7.png',
-  name: 'Midea 490 Liters Side by Side Refrigerator With Dispenser & Ice Cube maker',
-  ratings: {
-    star: 4.5,
-    count: 345
-  },
-  price: '650,000',
-  keyWords: [
-    'Refridgerator',
-    'fridge',
-    'freezer',
-    'dispenser',
-  ]
-}, {
-  id: 'kkj98y78t766truith78y89uj',
-  image: 'Products-images/images8.png',
-  name: 'Midea 490 Liters Side by Side Refrigerator With Dispenser & Ice Cube maker',
-  ratings: {
-    star: 4.5,
-    count: 345
-  },
-  price: '650,000',
-  keyWords: [
-    'Refridgerator',
-    'fridge',
-    'freezer',
-    'dispenser',
-  ]
-}, {
-  id: 'Yugho908ygr8gth87eyt768ergy',
-  image: 'Products-images/images10.png',
-  name: 'Midea 490 Liters Side by Side Refrigerator With Dispenser & Ice Cube maker',
-  ratings: {
-    star: 4.5,
-    count: 345
-  },
-  price: '650,000',
-  keyWords: [
-    'Refridgerator',
-    'fridge',
-    'freezer',
-    'dispenser',
-  ]
-}, {
-  id: 'yu7jhgyubiuojni',
-  image: 'Products-images/images12.png',
-  name: 'Midea 490 Liters Side by Side Refrigerator With Dispenser & Ice Cube maker',
   ratings: {
     star: 4.5,
     count: 345
