@@ -1,0 +1,96 @@
+@media (max-width: 1025px) {
+  header {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .active.search-container {
+    background-color: white;
+    border-radius: 50px;
+    max-width: 50px;
+    height: 50px;
+
+  }
+
+  .active .search-bar { 
+    max-width: 0;
+    height: 0;
+    padding: 0;
+  }
+
+  .active .search-button {
+    width: 0;
+    height: 0;
+    padding: 0;
+    transition: all 1s;
+  }
+
+  .active .search-icon-container {
+    width: 0;
+    height: 0;
+  }
+
+  .search-container {
+    max-width: 500px;
+    margin-left: -3rem;
+    margin-right: 3rem;
+  }
+
+  .ham-div {
+    display: block;    
+    margin-right: -1.7rem;
+    position: relative;
+  }
+ 
+  .order-container {
+    display: none;
+  }
+
+  .cart {
+    display: none;
+  } 
+}    
+
+@media (max-width: 2000px) {
+  .products-grid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+/* This @media means when the screen width is 1600px or
+   less, we will divide the grid into 6 columns. */
+@media (max-width: 1600px) {
+  .products-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media (max-width: 1300px) {
+  .products-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 1000px) {
+  .products-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 800px) {
+  .products-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 575px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 450px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+}

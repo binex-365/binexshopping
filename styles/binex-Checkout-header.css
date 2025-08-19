@@ -1,0 +1,148 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgb(235, 229, 229);
+  padding: 20px 50px;
+  margin-bottom: 2.5rem;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  background-color: brown;
+  z-index: 10000;
+}
+
+.img-container {
+  width: 60px;
+  height: 60px;
+  border-top-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+
+.binx {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+}
+
+.binex-container {
+  width: 60px;
+  position: relative;
+  border: 1px solid brown;
+  transition: all 1s;
+}
+
+.binex-container:hover {
+  border: 1px solid rgb(255, 70, 70);
+  border-radius: 50px;
+  box-shadow: 0px 3px 6px rgb(255, 255, 255);
+}
+
+.binex {
+  width: 100%;
+  height: 100%;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.check {
+  box-shadow: 0px 4px 8px rgb(233, 232, 232);
+  padding: 20px 50px;
+}
+
+.titl {
+  font-size: 22px;
+  text-shadow: 0px 1.2px 3px;
+  color: white;
+}
+
+.cnt {
+  font-size: 19px;
+  color: rgb(255, 234, 234);
+  cursor: pointer;
+  text-shadow: 0px 1.3px 3px rgb(0, 0, 0);
+}
+
+.cntn {
+  animation: moves 1.3s linear infinite;
+  animation-delay: 0.2s;
+}
+
+@keyframes moves {
+  0% {
+    font-size: 19px;
+  }
+
+  50% {
+    font-size: 15px;
+  }
+
+  75% {
+    font-size: 17px;
+  }
+
+  100% {
+    font-family: cursive;
+    font-size: 19.3px;
+  }
+}
+
+.nme {
+  position: absolute;
+  font-size: 11px;
+  color: rgb(255, 255, 255);
+  text-shadow: 0px 1px 2px;
+  text-align: center;
+  top: 55px;
+  left: -10px;
+  animation: mve 0.8s ease infinite;
+}
+
+.i {
+  position: absolute;
+  left: 15px;
+  top: 18px;
+}
+
+.n {
+  position: absolute;
+  left: 30px;
+  top: 25px;
+}
+
+.e {
+  position: absolute;
+  left: 55px;
+  top: 20px;
+}
+
+.x {
+  position: absolute;
+  left: 70px;
+  top: 2px;
+}
+
+@keyframes mve {
+  0% {
+    top: 55px;
+    left: -10px; 
+  }
+
+  50% {
+    top: 58px;
+    text-shadow: 0px 8px 18px;
+  }
+  
+}

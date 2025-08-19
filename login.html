@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to left, rgb(192, 25, 25),  rgb(236, 116, 116));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .flex {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0px 4px 8px rgba(255, 255, 255, 1);
+      border-radius: 10px;
+    }
+
+    .container {
+      background-color: #f1ecec;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+      width: 100%;
+      max-width: 420px;
+      animation: fadeIn 0.8s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    h2 {
+      text-align: center;
+      font-size: 2.5rem;
+      color: #2c3e50;
+      margin-bottom: 0.3rem;
+    }
+    p.subtitle {
+      text-align: center;
+      color: #555;
+      font-size: 0.95rem;
+      margin-bottom: 1.5rem;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .input-group {
+      position: relative;
+    }
+    .input-group i {
+      position: absolute;
+      top: 50%;
+      left: 1rem;
+      transform: translateY(-50%);
+      color: #2c3e50;
+    }
+    .input-group input {
+      width: 100%;
+      padding: 0.75rem 1rem 0.75rem 2.5rem;
+      border: 1px solid #ccc;
+      border-radius: 0.6rem;
+      outline: none;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      background-color: #f9f9f9;
+    }
+    .input-group input:focus {
+      border-color: #2c3e50;
+      box-shadow: 0 0 5px rgba(44, 62, 80, 0.4);
+    }
+    .form-options {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.875rem;
+    }
+    .form-options a {
+      color: #2c3e50;
+      text-decoration: none;
+    }
+    .form-options a:hover {
+      text-decoration: underline;
+    }
+    .btn1 {
+      background: linear-gradient(to right, rgb(192, 24, 24), #bcc5f0);
+      color: white;
+      padding: 1.5rem;
+      width: 300px;
+      font-size: 14px;
+      border: none;
+      color: white;
+      position: relative;
+      cursor: pointer;
+      text-transform: uppercase;
+      margin-right: 2rem;
+      transition: all 1s;
+      margin-left: 1.8rem;
+      border-top-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+    }
+
+    .btn1::before {
+      content: 'Get Started';
+      position: absolute;
+      left: 0;
+      top: 0;
+      background: linear-gradient(to left, rgb(63, 5, 5), #bcc5f0);
+      color: white;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform: rotateX(270deg);
+      transition: all 1s;
+      transform-origin: top;
+    }
+
+    .btn1::after {
+      content: 'Get Started';
+      position: absolute;
+      left: 0;
+      top: 0;
+      background: linear-gradient(to right, #bcc5f0, rgb(238, 81, 81));
+      color: white;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform: rotateX(270deg);
+      transition: all 1s;
+      transform-origin: top;
+      transition-duration: 0.6s;
+    }
+
+    .btn1:hover::before,
+    .btn1:hover::after {
+      transform: rotateX(0deg);
+    }
+
+    .bt:hover {
+      background: linear-gradient(to right, #acb6e5, #74ebd5);
+      color: white;
+    }
+    .signup {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      color: #555;
+    }
+    .signup a {
+      color: #2c3e50;
+      font-weight: 500;
+      text-decoration: none;
+    }
+    .signup a:hover {
+      text-decoration: underline;
+    }
+
+    .img-cont {
+      background: linear-gradient(to left, #ff6666, #f1ecec);
+      width: 400px;
+      height: 535px;
+      display: flex;
+      align-items: center;
+      border-radius: 15px;
+      box-shadow: -2px 4px 8px rgba(136, 134, 134, 0.8);
+      position: relative;
+    }
+
+    .binex {
+      width: 400px;
+      height: 100%;
+    }
+
+    .inf {
+      position: absolute;
+      bottom: 75px;
+      left: 10px;
+      color: rgb(192, 25, 25);
+      text-shadow: 0 1px 2px rgb(192, 25, 25);
+    }
+
+    .info {
+      position: absolute;
+      bottom: 40px;
+      left: 10px;
+      color: rgb(192, 25, 25);
+      text-shadow: 0 1px 2px rgb(192, 25, 25);
+    }
+
+    .ny {
+      margin-right: 95px;
+    }
+
+    .infos {
+      position: absolute;
+      bottom: 5px;
+      left: 10px;
+      color: rgb(192, 25, 25);
+      text-shadow: 0 1px 2px rgb(192, 25, 25);
+    }
+
+    .nys {
+      margin-right: 114px;
+    }
+
+    .we {
+      accent-color: rgb(192, 25, 25);
+    }
+  </style>
+</head>
+<body>
+  <div class="flex">
+    <div class="container">
+      <h2>Login</h2>
+      <p class="subtitle">Welcome back! Discover amazing products tailored just for you.</p>
+      <form action="inde.html">
+        <div class="input-group">
+          <i class="fas fa-envelope"></i>
+          <input type="email" id="email" name="email" placeholder="Email" required />
+        </div>
+        <div class="input-group">
+          <i class="fas fa-lock"></i>
+          <input type="password" id="password" name="password" placeholder="Password" required />
+        </div>
+        <div class="form-options">
+          <label><input type="checkbox" id="rememberMe" class="we"> Remember me</label>
+          <a href="#">Forgot password?</a>
+        </div>
+        <button type="submit" class="btn1">Get Started</button>
+      </form>
+      <p class="signup">Don't have an account? <a href="#">Sign up</a></p>
+    </div>
+
+    <div class="img-cont">
+      <img src="products-images/binex.png" alt="" class="binex">
+      <div class="inf">Website Developer: 
+          <span style="font-weight: bold; font-size: 19px; color:#360303; box-shadow: 0 0 5px rgba(0, 0, 0, 0.6); margin: left 5px; text-shadow: 0 0 5px rgba(40, 40, 41, 0.8);">
+          Emenike Obinna Emmanuel
+        </span>
+       </div>
+
+      <div class="info"> <span class="ny">Email:</span>
+        <span style="font-weight: bold; font-size: 19px; color:#360303; box-shadow: 0 0 5px rgba(0, 0, 0, 0.6); text-shadow: 0 0 5px rgba(40, 40, 41, 0.8);">
+          oe201374@gmail.com
+        </span>
+      </div>
+
+      <div class="infos"> <span class="nys">Tel:</span>
+        <span style="font-weight: bold; font-size: 19px; color:#360303; box-shadow: 0 0 5px rgba(0, 0, 0, 0.6); text-shadow: 0 0 5px rgba(40, 40, 41, 0.8);">
+          09126692328
+        </span>
+      </div>
+    </div>
+  </div>
+  
+
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+
+      if (!email || !password) {
+        alert('Please fill in all fields.');
+        return;
+      }
+    });
+  </script>
+</body>
+</html>
