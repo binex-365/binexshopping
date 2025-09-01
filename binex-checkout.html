@@ -7,6 +7,93 @@
     <link rel="stylesheet" href="styles/binex-Checkout.css">
     <link rel="stylesheet" href="styles/checkout-D-responsiveness.css">
     <link rel="icon" href="Products-images/Red-Pic/binex1.jfif">
+    <!-- ✅ Paystack script -->
+    <script src="https://js.paystack.co/v1/inline.js"></script>
+    <style>
+      /* ✨ Payment Method Styling (Modal-like box) */
+      .payment-method {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        width: 90%;
+        max-width: 350px;
+        background: #fff;
+        border: 1px solid #ddd;
+        border-radius: 12px;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+        padding: 1.2rem;
+        z-index: 2000;
+
+        /* 🚀 Hidden offscreen */
+        transform: translateX(120%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.4s ease;
+      }
+
+      /* 🚀 Active state = slide in */
+      .payment-method.active {
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .payment-method h3 {
+        font-size: 1.1rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+        color: #222;
+        text-align: center;
+      }
+
+      .payment-option {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 0.6rem;
+        border: 1px solid #e5e5e5;
+        border-radius: 8px;
+        margin-bottom: 0.6rem;
+        transition: all 0.3s ease;
+        cursor: pointer;
+      }
+
+      .payment-option:hover {
+        background: #f9f9f9;
+        border-color: #bbb;
+      }
+
+      .payment-option input[type="radio"] {
+        transform: scale(1.2);
+        accent-color: #ff3b3b; /* red accent */
+      }
+
+      .payment-option label {
+        font-size: 0.95rem;
+        color: #333;
+        cursor: pointer;
+        flex: 1;
+      }
+
+      /* Close button */
+      .close-payment {
+        position: absolute;
+        top: 8px;
+        right: 12px;
+        font-size: 20px;
+        cursor: pointer;
+        color: #666;
+      }
+
+      /* Responsive */
+      @media (max-width: 600px) {
+        .payment-method {
+          right: 10px;
+          left: 10px;
+          width: auto;
+        }
+      }
+    </style>
   </head>
   <body>
     <header>
@@ -15,13 +102,12 @@
           <img class="binx" src="Products-images/Red-Pic/binex1.jfif" alt="">
         </div>
       </a>
-      
 
       <div class="check">
         <span class="titl">Checkout (
           <a href="inde.html">
             <span class="cnt">
-              <span class="cntn js-ctn">344</span> items
+              <span class="cntn js-ctn"></span> items
             </span>
           </a>
            )
@@ -31,7 +117,6 @@
       <div class="binex-container">
         <div class="li"></div>
         <img src="Products-images/binex.png" alt="" class="binex">
-
         <div class="nme">
           <div class="b">B</div>
           <div class="i">I</div>
@@ -43,107 +128,78 @@
     </header>
 
     <!-- BODY -->
-     <div class="title">Review Your Order</div>
+    <div class="title">Review Your Order</div>
 
-     <div class="usd">Cart is empty !!!</div>
-     <div class="message js-mesg">
+    <div class="usd">“Your cart is empty !!!”</div>
+    <div class="message js-mesg">
       <img src="Products-images/red-check.jfif" class="mess">
       <span class="de">Deleted from cart !!</span>
     </div>
-     <div class="container">
+
+    <div class="container">
       <div class="grouping-products js-group">
-        <!--<div class="product-grid-container">
-          <p class="dates">Delivery date: Tuesday, June 21</p>
-          <div class="container1">
-            <div class="section">
-              <div class="imgs-cont">
-                <img src="Products/knit-athletic-sneakers-pink.webp" alt="" class="imgs-1">
-              </div>
-
-              <div class="info">
-                <div class="name">
-                  Waterproof Knit Athletic Sneakers - Pink
-                </div>
-
-                <div class="prices">19,500</div>
-
-                <div class="det">
-                  <div class="quant">
-                    Quantity: <span class="num">1</span>
-                  </div> 
-                  
-                  <div class="query">
-                    <span class="update">Update</span>
-                    <input type="text" class="inpt" placeholder="Update">
-                    <div class="save">Save</div>
-                    <span class="delete">Delete</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="section-ii">
-              <h3 class="ttl">Choose a delivery option:</h3>
-              <div class="chs-grid">
-                <input type="radio" name="name1" class="radio">
-              
-                <label for="name1" class="lab">
-                  Friday, May 31
-                  <div class="ships">FREE Shipping</div>
-                </label>
-              </div>
-
-              <div class="chs-grid">
-                <input type="radio" name="name1"class="radio">
-              
-                <label for="name1" class="lab">
-                  Saturday, May 24
-                  <div class="ships">1,000 - Shipping</div>
-                </label>
-              </div>
-
-              <div class="chs-grid">
-                <input type="radio" name="name1" class="radio">
-              
-                <label for="name1" class="lab">
-                  Wednesday, May 21
-                  <div class="ships">1,500 - Shipping</div>
-                </label>
-              </div>
-            </div>
-          </div>
-        </div> -->
+        <!-- Products will be injected here -->
       </div>
 
-        <!-- Payment-Summary -->
-
-        <div class="payment-summary">
-          <div class="payment-summary-title">
-            Order Summary
-          </div>
-  
-          <div class="payment-summary-row">
-            <div>Items (3):</div>
-            <div class="payment-summary-money">₦40,000</div>
-          </div>
-  
-          <div class="payment-summary-row">
-            <div>Shipping &amp; handling:</div>
-            <div class="payment-summary-money">₦4,500</div>
-          </div>
-  
-          <div class="payment-summary-row total-row">
-            <div>Order total:</div>
-            <div class="payment-summary-money">₦44,500</div>
-          </div>
-  
-          <button class="place-order-button button-primary">
-            <span>Place your order</span>
-          </button>
+      <!-- Payment-Summary -->
+      <div class="payment-summary">
+        <div class="payment-summary-title">
+          Order Summary
         </div>
-     </div>
 
-     <script type="module" src="script/binex-checkout.js"></script>
+        <div class="payment-summary-row">
+          <div>Items (<span id="items-count">0</span>):</div>
+          <div class="payment-summary-money" id="items-price">₦0</div>
+        </div>
+
+        <div class="payment-summary-row">
+          <div>Shipping &amp; handling:</div>
+          <div class="payment-summary-money" id="shipping-price">₦0</div>
+        </div>
+
+        <div class="payment-summary-row total-row">
+          <div>Order total:</div>
+          <div class="payment-summary-money" id="total-price">₦0</div>
+        </div>
+
+        <button id="placeOrderBtn" class="place-order-button button-primary">
+          <span>Place your order</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- ✅ Payment Method (hidden initially, slides in like modal) -->
+    <div class="payment-method" id="paymentMethod">
+      <span class="close-payment" id="closePayment">&times;</span>
+      <h3>Choose Payment Method</h3>
+      <div class="payment-option">
+        <input type="radio" id="paystack" name="payment" value="paystack" checked>
+        <label for="paystack">Pay Online (Paystack)</label>
+      </div>
+      <div class="payment-option">
+        <input type="radio" id="cod" name="payment" value="cod">
+        <label for="cod">Cash on Delivery</label>
+      </div>
+    </div>
+
+    <script>
+      // 🚀 Show/hide payment method
+      document.addEventListener("DOMContentLoaded", () => {
+        const placeOrderBtn = document.getElementById("placeOrderBtn");
+        const paymentMethod = document.getElementById("paymentMethod");
+        const closePayment = document.getElementById("closePayment");
+
+        placeOrderBtn.addEventListener("click", (e) => {
+          e.preventDefault();
+          paymentMethod.classList.add("active");
+        });
+
+        closePayment.addEventListener("click", () => {
+          paymentMethod.classList.remove("active");
+        });
+      });
+    </script>
+
+    <script type="module" src="script/binex-checkout.js"></script>
   </body>
-
 </html>
