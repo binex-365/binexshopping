@@ -1,6 +1,6 @@
 export function toggle() {
   const container = document.querySelector('.search-container');
-  const search = document.querySelector('.search-icon');
+  const search = document.querySelector('.search-button');
 
   search.addEventListener('click', () => {
     container.classList.toggle('active');
@@ -13,7 +13,7 @@ export function navBar() {
   const close = document.querySelector('.close-nav');
 
   open.addEventListener('click', () => {
-    nav.style.width="129px";
+    nav.style.width="140px";
   });
 
   close.addEventListener('click', () => {

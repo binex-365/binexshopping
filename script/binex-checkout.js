@@ -1,45 +1,45 @@
 import { cart, removeFromCart } from '../data/cart.js';
 import { products } from '../data/prdducts.js';
-
+//import dayjs from 'https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js'
 let cartSummary = '';
 cart.forEach((cartItem) => {
-  const {productId} = cartItem;
-  let sameProduct;
+
+  let fullProducts ='';
   products.forEach((product) => {
-    product.id === productId ? sameProduct = product : '';
+    product.id === cartItem.productId ? fullProducts = product: '';
   });
 
   cartSummary += `
-    <div class="product-grid-container conta-${sameProduct.id}">
+    <div class="product-grid-container conta-${fullProducts.id}">
       <p class="dates">Delivery date: Tuesday, June 21</p>
       <div class="container1">
         <div class="section">
           <div class="imgs-cont">
-            <img src="${sameProduct.image}" alt="" class="imgs-1">
+            <img src="${fullProducts.image}" alt="" class="imgs-1">
           </div>
 
           <div class="info">
             <div class="name">
-              ${sameProduct.name}
+              ${fullProducts.name}
             </div>
 
-            <div class="prices">₦${sameProduct.price}</div>
+            <div class="prices">₦${fullProducts.price}</div>
 
             <div class="det">
               <div class="quant">
-                Quantity: <span class="num js-sps-${sameProduct.id}">
+                Quantity: <span class="num js-sps-${fullProducts.id}">
                   ${cartItem.quantity}
                 </span>
               </div> 
               
               <div class="query">
-                <span class="update js-upd" data-product-id="${sameProduct.id}">Update</span>
-                <input type="number" class="inpt js-inpt-${sameProduct.id}" placeholder="Update">
-                <div class="save js-save-${sameProduct.id}" data-product-id="${sameProduct.id}">Save</div>
-                <span class="delete js-del" data-product-id = "${sameProduct.id}">Delete</span>
+                <span class="update js-upd" data-product-id="${fullProducts.id}">Update</span>
+                <input type="number" class="inpt js-inpt-${fullProducts.id}">
+                <div class="save js-save-${fullProducts.id}" data-product-id="${fullProducts.id}">Save</div>
+                <span class="delete js-del" data-product-id = "${fullProducts.id}">Delete</span>
               </div>
             </div>
-            <div class="loading-container js-l-${sameProduct.id}">
+            <div class="loading-container js-l-${fullProducts.id}">
               <div class="loader">
                 <div class="ld-t">Loading</div>
                 <div class="loading one"></div>
@@ -51,31 +51,48 @@ cart.forEach((cartItem) => {
         </div>
 
         <div class="section-ii">
-          <h3 class="ttl">Choose a delivery option:</h3>
-          <div class="chs-grid">
-            <input type="radio" name="name-${sameProduct.id}" class="radio" id='nao'>
-          
-            <label for="nao" class="lab">
-              Wednesday, May 21
-              <div class="ships">1,500 - Shipping</div>
+          <div class="ttl">
+            Choose a delivery option:
+          </div>
+           <div class="chs-grid">
+            <input type="radio"
+              class="radio"
+              name="delivery-option-${fullProducts.id}">
+            <label>
+              <div class="lab">
+                Friday, August 29
+              </div>
+              <div class="ship">
+                FREE Shipping
+              </div>
+            </label>
+          </div>
+
+           <div class="chs-grid">
+            <input type="radio"
+              class="radio"
+              name="delivery-option-${fullProducts.id}">
+            <label>
+              <div class="lab">
+                Friday, August 29
+              </div>
+              <div class="ship">
+                2,500 Shipping
+              </div>
             </label>
           </div>
 
           <div class="chs-grid">
-            <input type="radio" name="name-${sameProduct.id}"class="radio" id='nam'>
-          
-            <label for="nam" class="lab">
-              Saturday, May 24
-              <div class="ships">1,000 - Shipping</div>
-            </label>
-          </div>
-
-          <div class="chs-grid">
-            <input type="radio" name="name-${sameProduct.id}" class="radio" id='naw'>
-          
-            <label for="naw" class="lab">
-              Wednesday, May 21
-              <div class="ships">1,500 - Shipping</div>
+            <input type="radio"
+              class="radio"
+              name="delivery-option-${fullProducts.id}">
+            <label>
+              <div class="lab">
+                Friday, August 29
+              </div>
+              <div class="ship">
+                2,500 Shipping
+              </div>
             </label>
           </div>
         </div>
@@ -117,13 +134,6 @@ function saving() {
       const {productId} = svs.dataset;
 
       const input = document.querySelector(`.js-inpt-${productId}`);
-
-      /*let cartyQ = 0
-      cart.forEach((cartItem) => {
-        cartyQ += cartItem.quantity;
-      });
-      numbs > 0 ? numbs += cartyQ: '';
-      console.log(numbs); */
         
         const load = document.querySelector(`.js-l-${productId}`);
         load.classList.add('load-flex');

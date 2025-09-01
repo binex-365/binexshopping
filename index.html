@@ -1,5 +1,4 @@
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,129 +6,257 @@
   <style>
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     body {
       display: flex;
-      align-items: center;
       justify-content: center;
-      height: 100vh;
-      background: linear-gradient(to right, rgb(192, 23, 7), rgb(255, 172, 172));
-      color: rgb(22, 11, 11);
-      font-family: sans-serif;
+      align-items: center;
+      min-height: 100vh;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, rgb(172, 0, 0), #8b0000, #5a0000);
+      color: #f5f5f5;
+      overflow-x: hidden;
+      position: relative;
+      padding: 1rem;
     }
 
-    .bin {
-      color: white;
-      text-shadow: 0px 1px 2px black;
-      text-align: center;
+    body::before {
+      content: '';
+      position: absolute;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle at 20% 30%, rgba(255, 200, 0, 0.1), transparent 70%);
+      animation: float 15s ease-in-out infinite alternate;
+      z-index: 0;
+    }
 
+    @keyframes float {
+      0% { transform: translate(0, 0); }
+      50% { transform: translate(20px, -20px); }
+      100% { transform: translate(-20px, 20px); }
+    }
+
+    .container {
+      text-align: center;
+      max-width: 860px;
+      width: 100%;
+      padding: 2rem 2.5rem;
+      background: rgba(0, 0, 0, 0.55);
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(10px);
+      z-index: 1;
+      position: relative;
+      animation: fadeInContainer 1.8s ease forwards;
+    }
+
+    @keyframes fadeInContainer {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
     }
 
     h1 {
-      text-align: center;
-      text-shadow: 0px 1px 2px rgb(255, 232, 232);
-      line-height: 45px;
-      word-spacing: 6px;
-      font-size: 29px;
+      font-size: 2rem;
+      line-height: 1.4;
+      margin-bottom: 1.5rem;
+      text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+      font-weight: 600;
+      animation: slideDown 1s ease-out forwards;
+    }
+
+    @keyframes slideDown {
+      from { opacity: 0; transform: translateY(-50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .bin {
+      color: #ffd700;
+      text-shadow: 2px 2px 12px rgba(255, 215, 0, 0.9);
+      animation: glow 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 2px 2px 12px rgba(255, 215, 0, 0.9); }
+      to { text-shadow: 0 0 25px rgba(255, 215, 0, 1); }
     }
 
     .text {
-      line-height: 25px;
-      font-size: 17px;
-      text-align: center;
-      text-shadow: -1px 0px 2px rgb(41, 40, 40);
-      word-spacing: 4px;
-      letter-spacing: 0.6px;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.6);
+      white-space: pre-wrap;
+      overflow: hidden;
+      display: inline-block;
+      min-height: 80px;
+      position: relative;
+    }
+
+    .letter {
+      opacity: 0;
+      display: inline-block;
+      animation: fadeGlow 0.4s forwards;
+    }
+
+    @keyframes fadeGlow {
+      0% { opacity: 0; transform: translateY(5px); text-shadow: 0 0 0 #ffd700; }
+      50% { opacity: 1; transform: translateY(0); text-shadow: 0 0 15px #ffd700, 0 0 25px #ffb347; }
+      100% { opacity: 1; transform: translateY(0); text-shadow: 2px 2px 8px #ffd700; }
+    }
+
+    /* Wave-like moving glow */
+    .text.glow::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -50%;
+      width: 200%;
+      height: 100%;
+      background: linear-gradient(90deg, rgba(255, 215, 0, 0) 0%, rgba(255, 215, 0, 0.6) 50%, rgba(255, 215, 0, 0) 100%);
+      pointer-events: none;
+      animation: waveGlow 6s linear infinite;
+    }
+
+    @keyframes waveGlow {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(1300%); }
     }
 
     h4 {
-      text-align: center;
-      color: aquamarine;
-      text-shadow: -1px 0px 2px rgb(0, 0, 0);
-      word-spacing: 3px;
-      text-decoration: underline;
-      text-decoration-style: double;
-      text-underline-offset: 10px;
+      font-size: 1.2rem;
+      color: #ffb347;
+      margin-bottom: 2.5rem;
+      text-decoration: underline double #ffb347;
+      text-underline-offset: 6px;
+      text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+      animation: bounceGlow 2s infinite;
     }
 
-    .btn-cont {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-top: 3rem;
+    @keyframes bounceGlow {
+      0%, 100% { transform: translateY(0); text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5); }
+      50% { transform: translateY(-8px); text-shadow: 0 0 20px rgba(255, 179, 71, 1); }
     }
+
+    .btn-cont { display: flex; justify-content: center; }
 
     .btn {
-      padding: 1rem 3.2rem;
-      font-size: 15px;
-      border: 2px solid white;
-      border-top-left-radius: 10px;
-      border-bottom-right-radius: 10px;
-      background-color: transparent;
-      color: azure;
-      text-shadow: -1px 0px 2px;
+      padding: 1rem 3rem;
+      font-size: 1rem;
+      font-weight: bold;
+      border: 2px solid #ffb347;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #8b0000, #c00000);
+      color: #fff;
       cursor: pointer;
       position: relative;
       overflow: hidden;
-      transition: all 1s;
+      transition: all 0.4s ease;
+      box-shadow: 0 4px 15px rgba(255, 179, 71, 0.5);
+      animation: popIn 1.5s ease forwards 1s;
+    }
+
+    .btn:hover {
+      background: linear-gradient(135deg, #c00000, #8b0000);
+      transform: translateY(-3px) scale(1.08);
+      box-shadow: 0 8px 25px rgba(255, 179, 71, 0.7);
     }
 
     .btn::before {
       content: 'Sign in';
       position: absolute;
-      font-weight: bold;
       width: 100%;
       height: 100%;
       left: 0;
-      top: 0;
-      transform: translateY(-100%);
-      color: azure;
-      text-shadow: -1px 0px 2px;
-      background-color: rgb(17, 17, 17);
-      transition: all 1s;
+      top: -100%;
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: center;
+      background-color: rgba(0, 0, 0, 0.25);
+      color: #fff;
+      font-weight: bold;
+      transition: all 0.4s ease;
     }
 
-    .btn:hover::before {
-      transform: translateY(0%);
+    .btn:hover::before { top: 0; }
+
+    @keyframes popIn {
+      0% { transform: scale(0.5); opacity: 0; }
+      60% { transform: scale(1.2); opacity: 1; }
+      100% { transform: scale(1); opacity: 1; }
     }
 
-    a {
-      text-decoration: none;
+    /* Responsive adjustments */
+    @media (max-width: 1024px) {
+      h1 { font-size: 1.8rem; }
+      .text { font-size: 1rem; }
+    }
+
+    @media (max-width: 768px) {
+      .container { padding: 1.5rem; }
+      h1 { font-size: 1.5rem; line-height: 1.3; }
+      .text { font-size: 0.95rem; line-height: 1.5; }
+      h4 { font-size: 1rem; }
+      .btn { padding: 0.8rem 2rem; font-size: 0.9rem; }
+    }
+
+    @media (max-width: 480px) {
+      .container { padding: 1.2rem; }
+      h1 { font-size: 1.3rem; }
+      .text { font-size: 0.85rem; line-height: 1.4; }
+      h4 { font-size: 0.9rem; }
+      .btn { padding: 0.7rem 1.5rem; font-size: 0.85rem; }
     }
   </style>
 </head>
 
 <body>
-  <div>
+  <div class="container">
     <h1>
-      Welcome to <span class="bin">Binex Shopping E-commerce Website</span> – Where Quality Meets Co<span
-        class="bin">n</span>ve<span class="bin">n</span>ie<span class="bin">n</span>ce!
+      Welcome to <span class="bin">Binex Shopping</span> – Where Quality Meets Co<span class="bin">n</span>ve<span class="bin">n</span>ie<span class="bin">n</span>ce!
     </h1>
 
-    <p class="text">
-      Discover a handpicked selection of products designed to elevate your lifestyle. Whether you're shopping for the
-      latest trends, everyday essentials, or unique finds, we've got something for everyone.
-      Enjoy seamless shopping, unbeatable value, and customer-first service.
-    </p>
+    <p class="text" id="typed-text"></p>
 
-    <h4>
-      Shop smart. Live better. Start your journey with us today!
-    </h4>
+    <h4>Shop smart. Live better. Start your journey with us today!</h4>
 
-    <a href="login.html">
-      <div class="btn-cont">
-        <button class="btn">
-          Sign in
-        </button>
-      </div>
-    </a>
-
-
+    <div class="btn-cont">
+      <a href="login.html">
+        <button class="btn">Sign in</button>
+      </a>
+    </div>
   </div>
-</body>
 
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const text = "Discover a handpicked selection of products designed to elevate your lifestyle. Whether you're shopping for the latest trends, everyday essentials, or unique finds, we've got something for everyone. Enjoy seamless shopping, unbeatable value, and customer-first service. Explore our exclusive deals, seasonal collections, and limited-edition items curated just for you. Experience hassle-free returns, fast shipping, and personalized recommendations tailored to your tastes. Let Binex Shopping transform the way you shop—quality, convenience, and style all in one place!";
+
+      const container = document.getElementById("typed-text");
+      const words = text.split(" "); 
+      let wordIndex = 0;
+      const minSpeed = 50; 
+      const maxSpeed = 120;
+
+      function typeWord() {
+        if (wordIndex < words.length) {
+          const word = words[wordIndex];
+          const span = document.createElement("span");
+          span.className = "letter";
+          span.textContent = word + " "; 
+          container.appendChild(span);
+
+          wordIndex++;
+          const delay = Math.random() * (maxSpeed - minSpeed) + minSpeed;
+          setTimeout(typeWord, delay);
+        } else {
+          container.classList.add("glow");
+        }
+      }
+
+      typeWord();
+    });
+  </script>
+</body>
 </html>

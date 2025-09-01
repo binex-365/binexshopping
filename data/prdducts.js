@@ -9,10 +9,12 @@ export const products = [{
   price: '19,500',
 
   keyWords: [
-    'Waterproof',
-    'Shoes',
-    'Sneakers',
-    'Pink'
+    'waterproof',
+    'shoes',
+    'sneaker',
+    'Pink',
+    'trainer', 
+    'boot',
   ]
 }, {
   id: 'htuihgiusheio-5645w3-dfBBGa',
@@ -25,11 +27,13 @@ export const products = [{
   price: '25,500',
 
   keyWords: [
-    'Skatting Shoes',
-    'Shoes',
-    'Sneakers',
-    'Black'
-  ]
+  'waterproof',
+  'shoes',
+  'sneaker',
+  'Pink',
+  'trainer', 
+  'boot',
+]
 }, {
   id: 'efrgawejg3344-4--5fgbtg',
   image: 'Products-images/images2.png',
@@ -41,12 +45,13 @@ export const products = [{
   price: '23,200',
 
   keyWords: [
-    'Skatting Shoes',
-    'Shoes',
-    'Sneakers',
-    'red',
-    'Smaller Size'
-  ]
+  'waterproof',
+  'shoes',
+  'sneaker',
+  'Pink',
+  'trainer', 
+  'boot',
+]
 }, {
   id: 'gdvdjfyuegyuu-4r5-3eq233fdvzdHHJfij',
   image: 'Products-images/images3.png',
@@ -58,11 +63,12 @@ export const products = [{
   price: '30,800',
 
   keyWords: [
-    'Skatting Shoes',
-    'Shoes',
-    'Sneakers',
-    'White',
-    'Smaller Size'
+    'waterproof',
+    'shoes',
+    'sneaker',
+    'Pink',
+    'trainer', 
+    'boot',
   ]
 }, {
   id: 'stdfczgukd-878678577-gjgh',
@@ -76,8 +82,12 @@ export const products = [{
 
   keyWords: [
     'Men',
-    'Shoes',
-    'Sneakers',
+    'waterproof',
+    'shoes',
+    'sneaker',
+    'Pink',
+    'trainer', 
+    'boot',
   ]
 }, {
   id: 'ggdfyhrukhgu-3536-fdhfhf',
@@ -93,7 +103,9 @@ export const products = [{
     'Female',
     'heels',
     'comfort',
+    'shoes',
   ]
+
 }, {
   id: 'bzvmxcvmbjzkjh-1123-dsv',
   image: 'Products/retro.webp',
@@ -105,11 +117,16 @@ export const products = [{
   price: '20,000',
 
   keyWords: [
-    'Men',
-    'Shoes',
-    'Sneakers',
-    'White and Black'
+    'men',
+    'shoes',
+    'sneakers',
+    'White and Black',
+    'sneaker',
+    'Pink',
+    'trainer', 
+    'boot',
   ]
+
 }, {
   id: 'gyuffczxdffvdx-467-gjgh',
   image: 'Products/michael.webp',
@@ -122,7 +139,7 @@ export const products = [{
 
   keyWords: [
     'brownish',
-    'Shoes',
+    'shoes',
     'heels',
   ]
 }, {
@@ -137,7 +154,7 @@ export const products = [{
 
   keyWords: [
     'Men',
-    'Shoes',
+    'shoes',
     'Sneakers',
     'Green',
   ]

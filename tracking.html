@@ -1,67 +1,256 @@
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Orders</title>
-    <link rel="stylesheet" href="order-header.css">
-  </head>
-  <body>
-    <header>
-      <div class="images-container">
-        <img src="Products-images/Red-Pic/binex1.jfif" alt="" class="imgs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stunning Auth Page</title>
+  <style>
+    /* Base Reset */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #1a2a6c, #b21f1f, #fdbb2d);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow-x: hidden;
+    }
+
+    /* Auth Card */
+    .auth-card {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(12px);
+      border-radius: 20px;
+      padding: 2rem;
+      width: 100%;
+      max-width: 380px;
+      text-align: center;
+      color: #fff;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+      animation: fadeIn 1s ease;
+    }
+
+    .auth-card h2 {
+      margin-bottom: 1.5rem;
+      font-size: 1.8rem;
+    }
+
+    /* Inputs */
+    .input-group {
+      position: relative;
+      margin: 1.2rem 0;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 12px 14px;
+      border-radius: 12px;
+      border: none;
+      outline: none;
+      background: rgba(255,255,255,0.2);
+      color: #fff;
+      font-size: 1rem;
+      transition: background 0.3s ease;
+    }
+
+    .input-group input:focus {
+      background: rgba(255,255,255,0.3);
+    }
+
+    /* Floating Labels */
+    .input-group label {
+      position: absolute;
+      top: 50%;
+      left: 14px;
+      transform: translateY(-50%);
+      color: #ddd;
+      font-size: 0.9rem;
+      transition: 0.3s;
+      pointer-events: none;
+    }
+
+    .input-group input:focus + label,
+    .input-group input:not(:placeholder-shown) + label {
+      top: -8px;
+      left: 10px;
+      font-size: 0.7rem;
+      color: #fdbb2d;
+    }
+
+    /* Buttons */
+    button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 1rem;
+      border: none;
+      border-radius: 12px;
+      font-size: 1rem;
+      font-weight: bold;
+      color: #fff;
+      background: linear-gradient(45deg, #f12711, #f5af19);
+      cursor: pointer;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.4);
+    }
+
+    .links {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+    }
+
+    .links a {
+      color: #fdbb2d;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .links a:hover {
+      color: #fff;
+    }
+
+    /* MODALS */
+    .modal {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.4s ease;
+      z-index: 10;
+    }
+
+    .modal.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .modal-content {
+      background: rgba(255,255,255,0.1);
+      backdrop-filter: blur(15px);
+      border-radius: 18px;
+      padding: 2rem;
+      width: 90%;
+      max-width: 380px;
+      color: #fff;
+      transform: translateY(100px);
+      opacity: 0;
+      transition: all 0.4s ease;
+    }
+
+    .modal.active .modal-content {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 15px; right: 20px;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: #fff;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Responsive */
+    @media(max-width: 500px) {
+      .auth-card, .modal-content {
+        padding: 1.5rem;
+      }
+
+      .auth-card h2 {
+        font-size: 1.5rem;
+      }
+
+      button {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Main Auth Card -->
+  <div class="auth-card">
+    <h2>Welcome Back</h2>
+    <form>
+      <div class="input-group">
+        <input type="email" placeholder=" " required>
+        <label>Email Address</label>
       </div>
-     
-      <div class="search-container">
-        <input type="text" placeholder="Search" class="search-bar">
-        <button class="search-button">
-          <div class="search-icon-container">
-            <img src="Products-images/search-icon.png" class="search-icon" alt="">
-          </div> 
-        </button>
+      <div class="input-group">
+        <input type="password" placeholder=" " required>
+        <label>Password</label>
       </div>
-      <div class="contains">
-        <div class="order-container">
-          Returns
-          <div class="ord">& Orders</div>
-        </div>
+      <button type="submit">Login</button>
+    </form>
 
-         <a href="binex-checkout.html" class="cart">
-            <img src="Products/cart-icon.png" class="cart-icon" alt="">
-            <div class="num"></div>
-            <span class="c">Cart</span>
-          </a>
-      </div>
-    </header>
-
-    <div class="whole-container">
-      <div class="title">Your Orders</div>
-
-      <div class="order-container">
-        <div class="section-1"></div>
-        <div class="all-products">
-          <div class="product-cont-1">
-            <div class="imgs-contain">
-
-            </div>
-
-            <div class="infos">
-              <div class="name"></div>
-              <div class="dates"></div>
-              <div class="quantity"></div>
-              <div class="button-div">
-                <button class="btn">Buy it again</button>
-                <div class="lock">
-                  <img src="" alt="" class="loky">
-                </div>
-              </div>
-            </div>
-
-            <div class="track-btn">
-              <button class="track">Track package</button>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="links">
+      <a href="#" onclick="openModal('forgotModal')">Forgot Password?</a> | 
+      <a href="#" onclick="openModal('signupModal')">Signup</a>
     </div>
-  </body>
+  </div>
+
+  <!-- Signup Modal -->
+  <div class="modal" id="signupModal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal('signupModal')">&times;</span>
+      <h2>Create Account</h2>
+      <form>
+        <div class="input-group">
+          <input type="text" placeholder=" " required>
+          <label>Full Name</label>
+        </div>
+        <div class="input-group">
+          <input type="email" placeholder=" " required>
+          <label>Email</label>
+        </div>
+        <div class="input-group">
+          <input type="password" placeholder=" " required>
+          <label>Password</label>
+        </div>
+        <button type="submit">Signup</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Forgot Password Modal -->
+  <div class="modal" id="forgotModal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal('forgotModal')">&times;</span>
+      <h2>Reset Password</h2>
+      <form>
+        <div class="input-group">
+          <input type="email" placeholder=" " required>
+          <label>Email Address</label>
+        </div>
+        <button type="submit">Send Reset Link</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function openModal(id) {
+      document.getElementById(id).classList.add('active');
+    }
+
+    function closeModal(id) {
+      document.getElementById(id).classList.remove('active');
+    }
+  </script>
+</body>
 </html>

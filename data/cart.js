@@ -4,24 +4,11 @@ function loadFromStorage() {
   cart = JSON.parse(localStorage.getItem('cart'))||
   [{
     productId: 'svfhyf2156-3434rfdrfrrfg-5342',
-    quantity: 2
+    quantity: 2,
   }, {
     productId: 'htuihgiusheio-5645w3-dfBBGa',
-    quantity: 1
+    quantity: 1,
   }];
-
-  /*
-  STILL THESAME BUT ANOTHER WAY !!!
-  if (!cart) {
-    cart = [{
-      productId: 'svfhyf2156-3434rfdrfrrfg-5342',
-      quantity: 2
-    }, {
-      productId: 'htuihgiusheio-5645w3-dfBBGa',
-      quantity: 1
-    }];
-  }
-  */
 }
 
 loadFromStorage();
@@ -40,7 +27,7 @@ export function addToCart(productId) {
   } else {
     cart.push({
       productId,
-      quantity: value
+      quantity: value,
     });
   }
   saveToStorage();

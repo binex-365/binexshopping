@@ -4,19 +4,22 @@
   box-sizing: border-box;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 .container {
   margin: 50px;
   display: grid;
   grid-template-columns: 1fr 417px;
+  margin-top: 1rem;
 }
 
 .product-grid-container {
   border: 1px solid gainsboro;
   box-shadow: 0px 4px 8px rgba(129, 64, 64, 0.3);
-  padding-bottom: 25px;
-  padding-top: 0px;
   margin-bottom: 20px;
-  height: 278px;
+  min-width: 400px;
 }
 
 .usd {
@@ -34,16 +37,6 @@
   opacity: 1;
 }
 
-/* WRONG CSS
-.payment {
-  display: grid;
-  grid-template-columns: 1fr 70px;
-  border: 1px solid black;
-  margin-left: 2rem;
-  max-width: 400px;
-}
-*/
-
 .container1 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -52,6 +45,7 @@
 .section {
   display: flex;
   margin: 25px 20px;
+  height: 115px;
   margin-right: 100px;
   width: 400px;
 }
@@ -64,6 +58,7 @@
   height: 300px;
   margin-left: 12px;
   margin-right: 3.5rem;
+  max-width: 380px;
 }
 
 .payment-summary-title {
@@ -73,21 +68,22 @@
   color: rgb(102, 8, 8);
   font-size: 18px;
   text-shadow: 0px 1px 2px;
+  margin-top: 0.5rem;
 }
 
 .payment-summary-row {
   display: grid;
   grid-template-columns: 1fr auto;
+  font-size: 16px;
+  margin-bottom: 12px;
+  color: rgb(23, 31, 0);
   font-size: 15px;
-  margin-bottom: 9px;
-  color: rgb(192, 24, 24);
-  font-size: 15px;
-  text-shadow: -1px 0px 2px;
+  text-shadow: 0px 0px 2px;
 }
 
 .payment-summary-money {
   text-align: right;
-  color: rgb(73, 27, 27);
+  color: rgb(54, 18, 18);
 }
 
 .amount {
@@ -109,7 +105,8 @@
   font-size: 18px;
 
   border-top: 1px solid rgb(222, 222, 222);
-  padding-top: 18px;
+  padding-top: 30px;
+  margin-top: 3rem;
 }
 
 .place-order-button {
@@ -161,7 +158,6 @@
 
 .info {
   margin-left: 1.5rem;
-  width: 310px;
 }
 
 .section-ii {
@@ -170,9 +166,9 @@
 }
 
 .ttl {
-  color: rgb(102, 8, 8);
+  color: rgba(0, 0, 0, 0.733);
+  text-shadow: 0px 1px 2px rgba(66, 64, 64, 0.836);
   font-size: 18px;
-  text-shadow: 0px 1px 2px;
   margin-bottom: 14px;
 }
 
@@ -194,21 +190,22 @@
 }
 
 .lab {
-  color: rgb(192, 24, 24);
-  font-size: 15.6px;
+  color: rgb(102, 8, 8);
+  font-size: 17px;
   text-shadow: -1px 0px 2px;
   cursor: pointer;
 }
 
-.ships {
-  font-size: 13px;
-  color: rgb(129, 64, 64);
+.ship {
+  font-size: 14px;
+  color: rgb(0, 0, 0);
+  text-shadow: 0px 1px 2px rgb(66, 64, 64);
   margin-top: 2.5px;
 }
 
 .name {
-  color: rgb(112, 4, 4);
-  text-shadow: 0px 1px 2px;
+  color: rgb(0, 0, 0);
+  text-shadow: 0px 1px 2px rgb(66, 64, 64);
   font-size: 17px;
   margin-bottom: 8px;
   display: -webkit-box;
@@ -218,8 +215,8 @@
 }
 
 .dates {
-  color: rgb(139, 3, 3);
-  text-shadow: -1.2px 0px 3px;
+  color: rgb(102, 8, 8);
+  text-shadow: 0px 1px 2px;
   font-weight: bold;
   font-size: 18px;
   margin-top: 20px;
@@ -228,7 +225,8 @@
 }
 
 .prices {
-  color: rgb(192, 24, 24);
+  color: rgb(116, 9, 9);
+  text-shadow: 0px 1px 2px rgba(49, 48, 48, 0.582);
   font-weight: bold;
   margin-bottom: 5px;
 }
@@ -257,7 +255,6 @@
   justify-content: center;
 }
 
-.update,
 .save,
 .delete {
   color: rgb(192, 24, 24);
@@ -268,30 +265,49 @@
 
 .update {
   margin-right: 6px;
+  color: rgb(0, 116, 0);
+  text-shadow: 0px 1px 2px rgb(119, 109, 109);
+  transition: all .4s;
+  cursor: pointer;
 }
 
-.update:hover,
-.save:hover,
+.update:hover {
+  color: green;
+  text-shadow: 0px 1px 2px green;
+  cursor: pointer;
+}
+
+.delete {
+  color: rgb(255, 0, 0);
+  text-shadow: 0px 1px 2px rgb(153, 0, 0);
+  transition: all .4s;
+  cursor: pointer;
+}
+
 .delete:hover {
-  color: rgb(49, 10, 10);
+  color: rgb(189, 0, 0);
+  text-shadow: -2px 0px 2px rgb(192, 24, 24);
+  cursor: pointer;
+}
+
+.save:hover {
+  color: rgb(95, 0, 0);
   text-shadow: -2px 0px 2px rgb(192, 24, 24);
   cursor: pointer;
 }
 
 .inpt {
-  width: 60px;
   outline: none;
   border: 1px solid rgb(112, 4, 4);
-  border-radius: 3px;
-  text-align: center;
+  border-radius: 2px;
   font-size: 15px;
   color: rgb(112, 4, 4);
   text-shadow: 0px 1px 2px rgb(192, 24, 24);
   margin-right: 6px;
+  cursor: pointer; 
+  width: 40px;
+  padding: 1px;
   display: none;
-  padding-top: 3px;
-  padding-bottom: 4px;
-  cursor: pointer;
 }
 
 .save {
@@ -350,6 +366,7 @@
   left: 550px;
   opacity: 0;
   z-index: 1000;
+  pointer-events: none;
   background-color: white;
   position: fixed;
 }

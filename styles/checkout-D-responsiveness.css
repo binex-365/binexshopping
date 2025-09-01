@@ -1,7 +1,7 @@
 @media(max-width: 1025px) {
   header {
     padding-left: 10px;
-    padding-right: 15px;
+    padding-right: 20px;
   }
 
   .check {
@@ -16,66 +16,96 @@
     font-size: 17px;
   }
 }
-/* Finished the header*/
 
-@media(max-width: 805px) {
+@media(max-width: 600px) {
+  header {
+    padding-left: 10px;
+    padding-right: 15px;
+  }
+
+  .check {
+    padding: 14px 10px;
+  }
+
+  .titl {
+    font-size: 21px;
+  }
+
+  .cnt {
+    font-size: 17px;
+  }
+}
+/* Finished the header*/
+/* Body Section */
+
+/* --- RESPONSIVENESS --- */
+@media (max-width: 1024px) {
   .container {
-    display: grid;
     grid-template-columns: 1fr;
-    align-items: center;
-    justify-content: center;
+    margin: 20px;
+  }
+
+  .payment-summary {
+    margin: 20px 0;
+    grid-row: 1; /* ✅ move summary above products */
+    max-width: 100%;
+    height: auto;
   }
 
   .product-grid-container {
-    height: 420px;
-  }
-
-  .container1 {
-    grid-template-columns: repeat(1, 1fr);
-    max-width: 400px;
+    min-width: auto;
+    width: 100%;
   }
 
   .section {
-    margin-bottom: 0px;
+    flex-direction: column;
+    width: 100%;
+    margin: 15px 0;
   }
 
   .section-ii {
-    margin-top: -1.8rem;
-    margin-left: 25px;
-  }
-
-  .payment-summary {
-    margin-left: 3rem;
-    display: grid;
-    align-items: center;
-    grid-row: 1;
-    min-width: 350px;
-    margin-bottom: 2rem;
-  }
-
-  .message {    
-    left: 125px;
-  }
-} 
-
-@media( max-width: 900px) {
-  .payment-summary {
-    margin-left: 3rem;
-    display: grid;
-    align-items: center;
-    grid-row: 1;
-    min-width: 350px;
-    margin-bottom: 2rem;
-  }
-
-  .container {
-    display: grid;
-    grid-template-columns: 1fr;
-    align-items: center;
-    justify-content: center;
+    max-width: 100%;
   }
 }
 
-@media (max-width: 1025px) {
-   
+@media (max-width: 600px) {
+  .title {
+    margin-left: 15px;
+    margin-top: 5rem;
+    font-size: 16px;
+  }
+
+  .usd {
+    margin-left: 15px;
+    font-size: 15px;
+  }
+
+  .payment-summary {
+    padding: 15px;
+    margin: 10px 0;
+  }
+
+  .payment-summary-title {
+    font-size: 16px;
+  }
+
+  .payment-summary-row {
+    font-size: 14px;
+  }
+
+  .place-order-button {
+    padding: 15px 20px;
+    font-size: 14px;
+  }
+
+  .imgs-cont {
+    height: auto;
+  }
+
+  .imgs-1 {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
 }
+
