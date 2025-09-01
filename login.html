@@ -530,7 +530,7 @@
 
 
     <div class="img-cont">
-      <img src="products-images/binex.png" alt="" class="binex">
+      <img src="Products-images/binex.png" alt="" class="binex">
 
       <!-- ✅ Developer Info Fixed -->
       <div class="dev-info">
@@ -559,10 +559,24 @@
       e.preventDefault();
       modal.classList.add("active");
       modal.style.display = "flex";
+
+      // Auto-focus input when modal opens
+      const emailInput = modal.querySelector("input[type='email']");
+      if (emailInput) {
+        setTimeout(() => emailInput.focus(), 300);
+      }
     });
 
+    // Close with "×" button
     closeBtn.addEventListener("click", () => closeWithAnimation(modal));
-    window.addEventListener("click", (e) => { if (e.target === modal) closeWithAnimation(modal); });
+
+    // ✅ Close ONLY if user clicks the overlay itself (not modal-content)
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        closeWithAnimation(modal);
+      }
+    });
+
 
     // ---------------- Sign Up Modal ----------------
     const signupModal = document.getElementById("signupModal");

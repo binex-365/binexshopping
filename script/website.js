@@ -39,7 +39,7 @@ function displayProducts(productList, searchQuery = '') {
 
           <div class="product-rating-container">
             <img class="product-rating-stars"
-              src="products-images/ratings/rating-${product.ratings.star * 10}.png">
+              src="Products-images/ratings/rating-${product.ratings.star * 10}.png">
             <div class="product-rating-count">
               ${product.ratings.count}
             </div>
@@ -58,7 +58,7 @@ function displayProducts(productList, searchQuery = '') {
           <div class="product-spacer"></div>
 
           <div class="added-to-cart js-pops-${product.id}">
-            <img src="products-images/red-check.jfif"> Added
+            <img src="Products-images/red-check.jfif"> Added
           </div>
 
           <button class="btn js-btn" data-product-id="${product.id}">
